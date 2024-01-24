@@ -10,18 +10,6 @@ const Create = () => {
 
   const navigate = useNavigate();
 
-  //   function handleSubmit(e) {
-  //     e.preventDefault();
-
-  //     axios
-  //       .post("/add_goal", values)
-  //       .then((res) => {
-  //         navigate("/");
-  //         console.log(res);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-
   const handleOnSubmit = (e) => {
     e.preventDefault();
     try {
