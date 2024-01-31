@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const Home = () => {
   const [data, setData] = useState([]);
 
@@ -49,7 +50,7 @@ const Home = () => {
                 <td>{goal.call_to_action}</td>
                 <td>
                   <Link to={`/read/${goal.id}`}>Read</Link>
-                  <Link to={`/edit/${goal.goal}`}>Edit</Link>
+                  <Link to={`/edit/${goal.id}`}>Edit</Link>
                   <button>Delete</button>
                 </td>
               </tr>
@@ -60,5 +61,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

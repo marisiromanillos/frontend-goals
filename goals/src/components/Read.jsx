@@ -25,31 +25,29 @@ const Read = () => {
 
   useEffect(() => {
     getGoalsData();
-  }, []);
+  }, [id]);
 
   return (
     <>
       <div>
         <h1>Goal {id}</h1>
         <Link to="/">Back</Link>
-        {data.map((goal) => {
-          return (
-            <ul>
-              <li>
-                <b>ID:</b>
-                {goal["id"]}
-              </li>
-              <li>
-                <b>Goal</b>
-                {goal["goal"]}
-              </li>
-              <li>
-                <b>Call to action</b>
-                {goal["call_to_action"]}
-              </li>
-            </ul>
-          );
-        })}
+        {data.map((goal) => (
+          <ul key={goal.id}>
+            <li>
+              <b>ID:</b>
+              {goal.id}
+            </li>
+            <li>
+              <b>Goal:</b>
+              {goal.goal}
+            </li>
+            <li>
+              <b>Call to action:</b>
+              {goal.call_to_action}
+            </li>
+          </ul>
+        ))}
       </div>
     </>
   );
