@@ -52,34 +52,48 @@ const Edit = () => {
   };
 
   return (
-    <>
-      <h3>Edit Goal</h3>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Goal:
-          <input
-            type="text"
-            name="goal"
-            value={formData.goal || ""}
-            onChange={handleInputChange}
-          />
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-tr from-black to-gray-800 text-white p-4">
+    <h1 className="text-3xl font-bold text-gray-100 mb-8">Edit Goal</h1>
+    <form onSubmit={handleSubmit} className="w-full max-w-md">
+      <div className="mb-4">
+        <label htmlFor="goal" className="block text-sm font-medium text-gray-300">
+          Goal
         </label>
-        <br />
-        <label>
-          Call To Action:
-          <input
-            type="text"
-            name="call_to_action"
-            value={formData.call_to_action || ""}
-            onChange={handleInputChange}
-          />
+        <input
+          type="text"
+          name="goal"
+          value={formData.goal || ""}
+          onChange={handleInputChange}
+          className="w-full px-3 py-2 mt-1 text-gray-100 bg-gray-700 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="call_to_action" className="block text-sm font-medium text-gray-300">
+          Call To Action
         </label>
-        <br />
-        <button type="submit">Update Goal</button>
-        <Link to="/">Return Home</Link>
-      </form>
-    </>
+        <input
+          type="text"
+          name="call_to_action"
+          value={formData.call_to_action || ""}
+          onChange={handleInputChange}
+          className="w-full px-3 py-2 mt-1 text-gray-100 bg-gray-700 rounded-md focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+          className="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+        >
+          Update Goal
+        </button>
+        <Link to="/" className="block mt-4 text-center text-white hover:underline">See updated goal</Link>
+      </div>
+    </form>
+  </div>
+  
   );
+  
+  
 };
 
 export default Edit;

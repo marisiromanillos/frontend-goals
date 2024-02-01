@@ -29,26 +29,33 @@ const Read = () => {
 
   return (
     <>
-      <div>
-        <h1>Goal {id}</h1>
-        <Link to="/">Back</Link>
-        {data.map((goal) => (
-          <ul key={goal.id}>
-            <li>
-              <b>ID:</b>
-              {goal.id}
-            </li>
-            <li>
-              <b>Goal:</b>
-              {goal.goal}
-            </li>
-            <li>
-              <b>Call to action:</b>
-              {goal.call_to_action}
-            </li>
-          </ul>
-        ))}
-      </div>
+<div className="flex flex-col items-center justify-center h-screen bg-gradient-to-tr from-black to-gray-800 text-white">
+  <div className="w-full max-w-md mx-auto mt-8 mb-10">
+    <h1 className="text-3xl font-bold mb-4">Goal {id}</h1>
+    <Link to="/" className="bg-primary-blue text-white py-1 px-2 rounded-md mb-6">
+      Back
+    </Link>
+    <div className="mt-6">
+    {data.map((goal) => (
+      <ul key={goal.id} className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md mb-4">
+        <li className="mb-2">
+          <b>ID:</b> {goal.id}
+        </li>
+        <li className="mb-2">
+          <b>Goal:</b> {goal.goal}
+        </li>
+        <li className="mb-2">
+          <b>Call to action:</b> {goal.call_to_action}
+        </li>
+      </ul>
+    ))}
+    </div>
+  </div>
+</div>
+
+
+
+
     </>
   );
 };
